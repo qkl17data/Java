@@ -30,5 +30,6 @@ public class BaseDemo02 {
          <<左移一位，等价于 乘以2
 
         * */
+
     }
 }
