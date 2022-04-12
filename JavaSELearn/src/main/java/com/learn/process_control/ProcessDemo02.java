@@ -15,6 +15,13 @@ public class ProcessDemo02 {
      if-else if-else多分支选择结构
     注：if语句从上到下执行时，先判断n >= 60成功后，
     后续else不再执行，因此，if (n >= 90)没有机会执行了。
+
+    switch 多分支选择   基本在开发中不使用
+    1.只能处理等值条件判断的情况，且表达式必须为byte，short，int或char类型 ，
+    不能是String或double,float. 1.7之后可以使用string
+    2.注意千万不要漏写break，建议打开fall-through警告；
+    3.总是写上default，建议打开missing default警告；
+    4.从Java 14开始，switch语句正式升级为表达式，不再需要break，并且允许使用yield返回值。
         * */
     public static void main(String[] args) {
 
@@ -27,7 +34,40 @@ public class ProcessDemo02 {
         当两个变量都不为null
         */
 //        testEqual();
-        testEqualNull();
+//        testEqualNull();
+        testSwitch();
+//        testSwitch14();   Switch  java14后的版本
+    }
+
+/*    private static void testSwitch14() {
+          String fruit = "orange";
+          int opt = switch (fruit) {
+              case "apple" -> 1;
+              case "pear", "mango" -> 2;
+              default -> {
+                  int code = fruit.hashCode();
+                  yield code; // switch语句返回值
+              }
+          };
+          System.out.println("opt = " + opt);
+      }
+*/
+    private static void testSwitch() {
+        int option = 1;
+        switch (option) {
+            case 1:
+                System.out.println("Selected 1");
+                break;
+            case 2:
+                System.out.println("Selected 2");
+                break;
+            case 3:
+                System.out.println("Selected 3");
+                break;
+            default:
+                System.out.println("No Selected");
+                break;
+        }
 
     }
 
@@ -43,8 +83,8 @@ public class ProcessDemo02 {
     }
 
     private static void testEqualNull() {
-        String s2="hello";
-        String s1=null;
+        String s2 = "hello";
+        String s1 = null;
 //        if (s1.equals(s2)){
 //            System.out.println("相等");
 //        }
@@ -52,7 +92,7 @@ public class ProcessDemo02 {
 	at com.learn.process_control.ProcessDemo02.testEqualNull(ProcessDemo02.java:48)
 	at com.learn.process_control.ProcessDemo02.main(ProcessDemo02.java:30)
 	*/
-        if (s2.equals(s1)){//此时并不报错
+        if (s2.equals(s1)) {//此时并不报错
             System.out.println("相等");
         }
         /*当equals前面的变量s1并不知道是否为null的时候,推荐使用以下语法
@@ -62,7 +102,7 @@ public class ProcessDemo02 {
             System.out.println("hello");
         }
         //语法二
-        if ( "hello".equals(s1)) {
+        if ("hello".equals(s1)) {
             System.out.println("hello");
         }
     }
