@@ -11,6 +11,7 @@ public class BaseDemo01 {
         逻辑与、逻辑或
         短路或、短路与
         逻辑异或、逻辑反
+        CES
         * */
 
         System.out.println(5^6);
