@@ -33,7 +33,11 @@ public class StringRegex {
         testPhoneNum("010-12345678");
         /**
          * 复杂匹配规则
-         *
+         * 用正则表达式进行多行匹配时，我们用^表示开头，$表示结尾  ^A\\d{3}$ 匹配A221
+         * 使用[]匹配指定范围   [1-9]字符1-9  a-f字符a-f   大小写不限的十六进制 [1-9a-fA-F]
+         * 排除法 [^1-9]{3} 非1-9中字符的3位数
+         * 或匹配规则  用 | 连接的两个正则规则   java|php
+         * 使用括号 匹配字符串learn java、learn php和learn go   learn\\s(java|php|go)
          * */
     }
 
